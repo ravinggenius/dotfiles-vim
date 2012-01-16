@@ -1,0 +1,304 @@
+" REFERENCES
+"{{{
+  " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+  " http://amix.dk/vim/vimrc.html
+  " https://bitbucket.org/rride_a/myvim/src/8fea90269713/.vimrc
+  " http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+  " http://www.vim.org/scripts/script.php?script_id=2332
+  " https://github.com/gmarik/vimfiles/blob/master/vimrc
+"}}}
+
+
+" GENERAL
+"{{{
+  " Screw legacy
+  set nocompatible
+
+  " Automatically reload .vimrc on save
+  autocmd! bufwritepost .vimrc source %
+
+  " Smart indentation
+  set autoindent
+  set smartindent
+
+  " Tab stops
+  set tabstop=2
+  set shiftwidth=2
+  set softtabstop=2
+  set expandtab
+
+  " Show unwanted hidden characters and toggle with <leader>l
+  set list
+  set listchars=tab:↹\ ,trail:☠
+  nmap <leader>l :set list!<CR>
+
+  " Unicode
+  set encoding=utf-8
+
+  " Highlight matching brace/parenthese/bracket
+  set showmatch
+
+  " Visual bell
+  set vb t_vb=
+  set novisualbell
+
+  " Watch for file changes
+  set autoread
+
+  " Line endings
+  set fileformats=unix
+  set ff=unix
+
+  " Free-range cursor in INSERT mode
+  "set virtualedit=all
+
+  " Keep all the temporary and backup files in one place
+  set backup
+  set backupdir=~/.vim/backup
+  set directory=~/.vim/tmp
+  set nobackup
+  set noswapfile
+
+  " Remap split commands
+  nnoremap <leader>h :split<cr>
+  nnoremap <leader>v :vsplit<cr>
+
+  " Undo in INSERT mode
+  imap <c-z> <c-o>u
+
+  " Make tabbing in VISUAL mode keep highlighting
+  vmap <tab> >gv
+  vmap <s-tab> <gv
+"}}}
+
+
+" PLUGIN MANAGEMENT (VUNDLE)
+"{{{
+  " NOTE comments after Bundle command are not allowed
+
+  " This is required
+  filetype off
+
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " Also required
+  Bundle 'gmarik/vundle'
+"}}}
+
+
+" SPELL CHECKING
+"{{{
+  " Turn off spell checking (colors made text unreadable)
+  set nospell
+  set spelllang=en
+
+  " Show only 9 suggestions for misspelled words
+  set spellsuggest=9
+"}}}
+
+
+" SEARCH
+"{{{
+  " Incremental search with ignore case (except explicit caps)
+  set incsearch
+  set ignorecase
+  set smartcase
+  set showmatch
+  set hlsearch
+
+  " clear search results
+  nnoremap <leader><space> :noh<cr>
+
+  " Search highlighting
+  set hls
+  "set nohls
+
+  " Ruby-ish regular expressions
+  map / /\v
+"}}}
+
+
+" FOLDING
+"{{{
+  " Enable indent folding
+  set foldenable
+  set fdm=indent
+
+  " Turn off folding by default
+  set foldlevel=100
+
+  " Set space to toggle a fold
+  nnoremap <space> za
+"}}}
+
+
+" DECORATION
+"{{{
+  Bundle 'molokai'
+  Bundle 'nelstrom/vim-mac-classic-theme'
+  Bundle 'altercation/vim-colors-solarized'
+  Bundle 'gmarik/ingretu'
+  Bundle 'wombat256.vim'
+
+  " Turn on line numbering
+  set number
+
+  " Width reserved for line numbers
+  set numberwidth=4
+
+  " Mark long lines
+  "set colorcolumn=80
+
+  " Highlight current line
+  set cursorline
+
+  " Font
+  set guifont=Mensch\ for\ Powerline\ 8
+
+  " Theme
+  set background=dark
+  "colorscheme desert
+  "colorscheme slate
+  "colorscheme solarized
+
+  if has('gui_running')
+    colorscheme wombat256mod
+  else
+    colorscheme desert
+  end
+
+  " Remove gui toolbar
+  if has('gui_running')
+    set guioptions-=T
+  end
+"}}}
+
+
+" STATUSBAR
+"{{{
+  Bundle 'Lokaltog/vim-powerline'
+
+  let g:Powerline_symbols = 'fancy'
+
+  " Turn on statusbar
+  set ruler
+
+  " Always show the statusline
+  set laststatus=2
+"}}}
+
+
+" SAVING
+"{{{
+  " Save with ctrl+s
+  map <c-s> <esc>:w<cr>
+  imap <c-s> <c-o><c-s>
+  imap <c-s> <esc><c-s>
+
+  " Save when loosing focus
+  au FocusLost * :wa
+
+  " Make saving less annoying
+  map :W :w
+"}}}
+
+
+" PROJECT MANAGEMENT
+"{{{
+  Bundle 'austintaylor/vim-open'
+
+  " Projects Directory
+  let g:project_dir = '~/Code'
+  let g:open_dir_callback = 'CtrlP'
+
+  "let g:NERDTreeChDirMode=2
+  "map <F9> :NERDTreeToggle<CR>
+"}}}
+
+
+" QUICK OPEN
+"{{{
+  " http://kien.github.com/ctrlp.vim/
+  Bundle 'kien/ctrlp.vim'
+
+  "nmap <leader>o :CtrlP<CR>
+  let g:ctrlp_working_path_mode = 2
+
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+  set wildignore+=*/.sass-cache/*,*/tmp/*,*/.tmp/*,*.so
+  set wildignore+=*/vendor/*
+
+  "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
+  "set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe
+  "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  "let g:ctrlp_custom_ignore = {
+  "  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  "  \ 'file': '\.exe$\|\.so$\|\.dll$',
+  "  \ 'link': 'some_bad_symbolic_link',
+  "  \ }
+
+  " Other...
+  "Bundle 'FuzzyFinder'
+  "Bundle 'git://git.wincent.com/command-t.git'
+"}}}
+
+
+" MOTIONS
+"{{{
+  "Bundle 'Lokaltog/vim-easymotion'
+
+  " Move a line of text using ALT+[jk] (Comamnd+[jk] on mac)
+  nmap <M-j> mz:m+<cr>`z
+  nmap <M-k> mz:m-2<cr>`z
+  vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+  vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+  " Turn off training wheels in NORMAL mode
+  nnoremap <up> <nop>
+  nnoremap <down> <nop>
+  nnoremap <left> <nop>
+  nnoremap <right> <nop>
+
+  " Turn off training wheels in INSERT mode
+  inoremap <up> <nop>
+  inoremap <down> <nop>
+  inoremap <left> <nop>
+  inoremap <right> <nop>
+
+  " Move up and down by screen lines, not file lines
+  nnoremap j gj
+  nnoremap k gk
+
+  " Keep at least 3 lines above/below
+  set scrolloff=3
+
+  " Keep at least 2 lines left/right
+  set sidescrolloff=2
+"}}}
+
+
+" INTEGRATION (GIT)
+"{{{
+  Bundle 'tpope/vim-git'
+  Bundle 'tpope/vim-fugitive'
+"}}}
+
+
+" INTEGRATION (RUBY)
+"{{{
+  "Bundle 'tpope/vim-rails.git'
+"}}}
+
+
+" OTHER
+"{{{
+  "Bundle 'L9'
+  "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"}}}
+
+
+" Detect file formats
+" Keep at end - vundle wants this to be off when calling Bundle '...'
+syntax on
+filetype indent plugin on
