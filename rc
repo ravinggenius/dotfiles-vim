@@ -109,7 +109,7 @@
   set showmatch
   set hlsearch
 
-  " clear search results
+  " Clear search highlighting
   nnoremap <leader><space> :noh<cr>
 
   " Search highlighting
