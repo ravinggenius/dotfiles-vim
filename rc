@@ -121,6 +121,13 @@
 "}}}
 
 
+" EDITING
+"{{{
+  Bundle 'ervandew/supertab'
+  Bundle 'scrooloose/nerdcommenter'
+"}}}
+
+
 " FOLDING
 "{{{
   " Enable indent folding
