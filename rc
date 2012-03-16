@@ -1,5 +1,10 @@
 " vim: set filetype=vim:
 
+
+" Screw legacy
+set nocompatible
+
+
 " REFERENCES
 "{{{
   " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -11,11 +16,23 @@
 "}}}
 
 
+" PLUGIN MANAGEMENT (VUNDLE)
+" NOTE comments after Bundle command are not allowed
+"{{{
+  " This is required
+  filetype off
+
+  " Initialize Vundle
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " Also required
+  Bundle 'gmarik/vundle'
+"}}}
+
+
 " GENERAL
 "{{{
-  " Screw legacy
-  set nocompatible
-
   " Automatically reload .vimrc on save
   autocmd! bufwritepost .vimrc source %
 
@@ -71,21 +88,6 @@
   " Make tabbing in VISUAL mode keep highlighting
   vmap <tab> >gv
   vmap <s-tab> <gv
-"}}}
-
-
-" PLUGIN MANAGEMENT (VUNDLE)
-"{{{
-  " NOTE comments after Bundle command are not allowed
-
-  " This is required
-  filetype off
-
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-
-  " Also required
-  Bundle 'gmarik/vundle'
 "}}}
 
 
