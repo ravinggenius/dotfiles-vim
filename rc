@@ -132,7 +132,9 @@ set nocompatible
 
 " EDITING
 "{{{
-  Bundle 'ervandew/supertab'
+  " Align text
+  Bundle 'godlygeek/tabular'
+
   Bundle 'scrooloose/nerdcommenter'
 "}}}
 
