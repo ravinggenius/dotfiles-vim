@@ -127,6 +127,10 @@ set nocompatible
 
   " Ruby-ish regular expressions
   map / /\v
+
+  " Center search results while browsing
+  map N Nzz
+  map n nzz
 "}}}
 
 
