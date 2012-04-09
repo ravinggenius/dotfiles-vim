@@ -223,8 +223,9 @@ set nocompatible
   let g:project_dir = '~/Code'
   let g:open_dir_callback = 'CtrlP'
 
-  "let g:NERDTreeChDirMode=2
-  "map <F9> :NERDTreeToggle<CR>
+  Bundle 'scrooloose/nerdtree'
+  let g:NERDTreeChDirMode=2
+  map <F9> :NERDTreeToggle<CR>
 "}}}
 
 
