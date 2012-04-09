@@ -88,6 +88,13 @@ set nocompatible
   " Make tabbing in VISUAL mode keep highlighting
   vmap <tab> >gv
   vmap <s-tab> <gv
+
+  " Remove scrollbars
+  if has('gui_running')
+    set guioptions-=l
+    set guioptions-=r
+    set guioptions-=b
+  end
 "}}}
 
 
