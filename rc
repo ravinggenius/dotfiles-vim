@@ -139,6 +139,11 @@ set nocompatible
   " Align text
   Bundle 'godlygeek/tabular'
 
+  " Cool tab completion stuff
+  Bundle 'ervandew/supertab'
+  set wildmenu
+  set wildmode=list:longest,full
+
   Bundle 'scrooloose/nerdcommenter'
 "}}}
 
