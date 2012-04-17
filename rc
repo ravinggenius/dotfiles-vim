@@ -316,6 +316,12 @@ set nocompatible
 "}}}
 
 
+" IMAGE EDITING
+"{{{
+  Bundle 'tpope/vim-afterimage'
+"}}}
+
+
 " OTHER
 "{{{
   "Bundle 'L9'
