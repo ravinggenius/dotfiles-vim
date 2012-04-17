@@ -254,6 +254,8 @@ set nocompatible
   set wildignore+=*/.sass-cache/*,*/tmp/*,*/.tmp/*,*.so
   set wildignore+=*/vendor/*
 
+  let g:ctrlp_custom_ignore = 'coverage$'
+
   "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
   "set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe
   "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
