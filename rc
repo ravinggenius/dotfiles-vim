@@ -144,6 +144,10 @@ set nocompatible
   set wildmenu
   set wildmode=list:longest,full
 
+  " toggle comments with \\\
+  Bundle 'tpope/vim-commentary'
+
+  " toggle comments with <leader>c<space>
   Bundle 'scrooloose/nerdcommenter'
 
   " Create empty line and stay in NORMAL mode
