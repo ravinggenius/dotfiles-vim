@@ -238,9 +238,6 @@ set nocompatible
   imap <c-s> <c-o><c-s>
   imap <c-s> <esc><c-s>
 
-  " Save when loosing focus
-  au FocusLost * :wa
-
   " Make saving less annoying
   map :W :w
 "}}}
