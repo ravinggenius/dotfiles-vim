@@ -173,10 +173,10 @@ set nocompatible
 
 " DECORATION
 "{{{
-  Bundle 'molokai'
-  Bundle 'nelstrom/vim-mac-classic-theme'
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'gmarik/ingretu'
+  "Bundle 'molokai'
+  "Bundle 'nelstrom/vim-mac-classic-theme'
+  "Bundle 'altercation/vim-colors-solarized'
+  "Bundle 'gmarik/ingretu'
   Bundle 'wombat256.vim'
 
   " Turn on line numbering
