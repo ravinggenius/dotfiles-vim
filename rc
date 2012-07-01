@@ -149,7 +149,7 @@ set nocompatible
   Bundle 'tpope/vim-commentary'
 
   " toggle comments with <leader>c<space>
-  Bundle 'scrooloose/nerdcommenter'
+  "Bundle 'scrooloose/nerdcommenter'
 
   " Create empty line and stay in NORMAL mode
   nnoremap <silent> zj o<Esc>
