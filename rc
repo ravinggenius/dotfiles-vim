@@ -247,10 +247,11 @@ set nocompatible
 
 " PROJECT MANAGEMENT
 "{{{
-  Bundle 'austintaylor/vim-open'
+  Bundle 'ravinggenius/vim-open'
 
   " Projects Directory
   let g:project_dir = '~/Code'
+  let g:open_dir_auto_open_nerdtree = 0
   let g:open_dir_callback = 'CtrlP'
 
   Bundle 'scrooloose/nerdtree'
