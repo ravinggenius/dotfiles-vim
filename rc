@@ -173,6 +173,7 @@ set nocompatible
 
 " DECORATION
 "{{{
+  " Some nice themes
   "Bundle 'molokai'
   "Bundle 'nelstrom/vim-mac-classic-theme'
   "Bundle 'altercation/vim-colors-solarized'
