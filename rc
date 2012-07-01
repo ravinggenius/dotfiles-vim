@@ -289,8 +289,6 @@ set nocompatible
 
 " MOTIONS
 "{{{
-  Bundle 'Lokaltog/vim-easymotion'
-
   " Move a line of text using ALT+[jk] (Comamnd+[jk] on mac)
   nmap <M-j> mz:m+<cr>`z
   nmap <M-k> mz:m-2<cr>`z
