@@ -282,7 +282,10 @@ set nocompatible
   "  \ }
 
   " Other...
+  "Bundle 'L9'
+  " FuzzyFinder depends on L9...
   "Bundle 'FuzzyFinder'
+
   "Bundle 'git://git.wincent.com/command-t.git'
 "}}}
 
@@ -326,22 +329,22 @@ set nocompatible
 "}}}
 
 
+" INTEGRATION (HTML)
+"{{{
+  " Write condensed HTML (expands CSS selector to full HTML tags)
+  "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"}}}
+
+
+" INTEGRATION (MARKDOWN)
+"{{{
+  Bundle 'plasticboy/vim-markdown'
+"}}}
+
+
 " INTEGRATION (RUBY)
 "{{{
-  "Bundle 'tpope/vim-rails.git'
-"}}}
-
-
-" IMAGE EDITING
-"{{{
-  Bundle 'tpope/vim-afterimage'
-"}}}
-
-
-" OTHER
-"{{{
-  "Bundle 'L9'
-  "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+  Bundle 'tpope/vim-rails.git'
 "}}}
 
 
