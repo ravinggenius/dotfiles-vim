@@ -324,8 +324,14 @@ set nocompatible
 
 " INTEGRATION (GIT)
 "{{{
+  " Syntax highlighting for git-specific files and stuff
   Bundle 'tpope/vim-git'
+
+  " Run git commands from vim
   Bundle 'tpope/vim-fugitive'
+
+  " Extends vim-fugitive with gitk functionality
+  Bundle 'gregsexton/gitv'
 "}}}
 
 
