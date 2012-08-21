@@ -145,7 +145,7 @@ set nocompatible
   set wildmenu
   set wildmode=list:longest,full
 
-  " toggle comments with \\\
+  " Toggle comments with <leader><leader><leader>
   Bundle 'tpope/vim-commentary'
 
   " toggle comments with <leader>c<space>
