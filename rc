@@ -151,6 +151,9 @@ set nocompatible
   " toggle comments with <leader>c<space>
   "Bundle 'scrooloose/nerdcommenter'
 
+  " Verify syntax against external tools
+  Bundle 'scrooloose/syntastic'
+
   " Create empty line and stay in NORMAL mode
   nnoremap <silent> zj o<Esc>
   nnoremap <silent> zk O<Esc>
