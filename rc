@@ -356,6 +356,7 @@ set nocompatible
 " INTEGRATION (RUBY)
 "{{{
   Bundle 'tpope/vim-rails.git'
+  Bundle 'vim-ruby/vim-ruby'
 "}}}
 
 
