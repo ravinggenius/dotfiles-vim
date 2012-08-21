@@ -4,4 +4,5 @@
 ln -s ~/dotfiles/vim ~/.vim
 [[ -e ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc_$(date -u +%Y%m%d%H%M%S)
 ln -s ~/dotfiles/vim/rc ~/.vimrc
+vim +BundleInstall +qall
 echo 'vim linked'
