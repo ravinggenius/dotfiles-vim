@@ -181,7 +181,7 @@ set nocompatible
   "Bundle 'nelstrom/vim-mac-classic-theme'
   "Bundle 'altercation/vim-colors-solarized'
   "Bundle 'gmarik/ingretu'
-  Bundle 'wombat256.vim'
+  Bundle 'duff/vim-wombat256mod'
 
   " Turn on line numbering
   set number
